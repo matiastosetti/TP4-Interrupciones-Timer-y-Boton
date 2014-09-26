@@ -19,6 +19,12 @@ void pulsoLed(uint8_t led, uint32_t tiempo);
 /**
  * @brief Aplicacion principal
  */
+void APP_ISR_sw(void){ //Interrupcion switch
+	led_toggle(1);
+
+}
+
+
 int main(void) {
 	bsp_init();
 

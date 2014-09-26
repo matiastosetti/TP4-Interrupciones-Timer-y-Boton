@@ -18,6 +18,14 @@ void led_off(uint8_t led);
 /**
  * @brief Delay por software
  */
+/**
+ * @brief conmuta un led
+ *
+ * @param led Led a apagar
+ */
+void led_toggle(uint8_t led);
+
+
 uint8_t sw_getState();
 
 /**
