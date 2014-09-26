@@ -22,6 +22,8 @@ const uint16_t leds[] = { LED_V, LED_R, LED_N, LED_A };
 
 
 extern void APP_ISR_sw(void); //se declara como externa porque
+extern void APP_ISR_1ms(void); //aplicaciones que se va a ejecutar cada 1msegundo
+
 
 void led_on(uint8_t led) {
 	GPIO_SetBits(leds_port[led], leds[led]);
@@ -58,16 +60,16 @@ void EXTI0_IRQHandler(void) {
  * @brief Interrupcion llamada al pasar 1ms
  */
 void TIM2_IRQHandler(void) {
-	static uint16_t count = 0;
+	//static uint16_t count_1ms = 0; //se la declara como static ya que no queremos que se borre
+	//cuando se salga de esta funcion de interrupción ya que necesitamos guardar el historial.
 
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) {
 		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-		if (count++ > 1000) {
-			GPIO_ToggleBits(leds_port[0], leds[0]);
-			count = 0;
+		APP_ISR_1ms(); //la interrupción llama a la función
+
 		}
 	}
-}
+
 
 void bsp_led_init();
 void bsp_sw_init();
