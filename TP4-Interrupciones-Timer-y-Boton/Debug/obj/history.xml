@@ -1,34 +1,34 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F401VC -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis_lib\include -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis_lib -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\bsp -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis_boot">
-      <target file="stm32f4xx_gpio.o" lastModified="148ad5c4350">
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSTM32F407VG -DSTM32F4XX -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis_lib\include -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis_lib -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\bsp -IE:\5 facu\Curso Sistemas Enbebidos\Programacion en c en coocox\Tp4 clonación de repositorio en máquina\TP4-Interrupciones-Timer-y-Boton\cmsis_boot">
+      <target file="stm32f4xx_gpio.o" lastModified="148b272a190">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="148ad331840"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="148ad5c52f0">
+      <target file="stm32f4xx_tim.o" lastModified="148b272b130">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="148ad337600"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="148ad5c4b20">
+      <target file="system_stm32f4xx.o" lastModified="148b272a190">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="148ad32f900"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="148ad5c3b80">
+      <target file="startup_stm32f4xx.o" lastModified="148b27299c0">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="148ad32f130"/>
       </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="148ad5c3b80">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="148ad341a10"/>
-      </target>
-      <target file="stm32f4xx_exti.o" lastModified="148ad5c52f0">
+      <target file="stm32f4xx_exti.o" lastModified="148b272a960">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="148ad334720"/>
       </target>
-      <target file="main.o" lastModified="148b2552e80">
+      <target file="stm32f4xx_syscfg.o" lastModified="148b27291f0">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="148ad341a10"/>
+      </target>
+      <target file="main.o" lastModified="148b27299c0">
          <source file="..\..\..\main.c" lastModified="148b2551710"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="148ad5c4350">
+      <target file="stm32f4xx_rcc.o" lastModified="148b272a190">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="148ad32f900"/>
       </target>
-      <target file="misc.o" lastModified="148ad5c52f0">
+      <target file="misc.o" lastModified="148b272b130">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="148ad33f300"/>
       </target>
-      <target file="bsp.o" lastModified="148b24bc070">
+      <target file="bsp.o" lastModified="148b272a960">
          <source file="..\..\..\bsp\bsp.c" lastModified="148b24ba130"/>
       </target>
    </processor>
