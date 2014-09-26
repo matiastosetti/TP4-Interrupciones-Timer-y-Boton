@@ -20,12 +20,19 @@ GPIO_TypeDef* leds_port[] = { GPIOD, GPIOD, GPIOD, GPIOD };
 /* Leds disponibles */
 const uint16_t leds[] = { LED_V, LED_R, LED_N, LED_A };
 
+extern void APP_ISR_sw(void);
+
+
 void led_on(uint8_t led) {
 	GPIO_SetBits(leds_port[led], leds[led]);
 }
 
 void led_off(uint8_t led) {
 	GPIO_ResetBits(leds_port[led], leds[led]);
+}
+
+void led_toggle(uint8_t led) {
+	GPIO_ToggleBits(leds_port[led], leds[led]);
 }
 
 uint8_t sw_getState(void) {
@@ -38,10 +45,10 @@ uint8_t sw_getState(void) {
 void EXTI0_IRQHandler(void) {
 
 	if (EXTI_GetITStatus(EXTI_Line0) != RESET) //Verificamos si es la del pin configurado
-			{
+	{
 		EXTI_ClearFlag(EXTI_Line0); // Limpiamos la Interrupcion
 		// Rutina:
-		GPIO_ToggleBits(leds_port[1], leds[1]);
+		APP_ISR_sw();
 	}
 }
 
