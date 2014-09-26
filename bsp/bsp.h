@@ -1,6 +1,9 @@
 #ifndef _BSP_H
 #define _BSP_H
 
+
+
+void bsp_delayMS(uint16_t x); //prototipo función
 /**
  * @brief Prende un led
  *

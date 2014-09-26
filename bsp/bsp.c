@@ -15,15 +15,23 @@
 
 #define BOTON GPIO_Pin_0
 
+volatile uint16_t bsp_contadorMS = 0; //variable global bsp. Se usaran en el delay y en la interrupción
+//esta variable anterior se define com volatile ya que se encuentra en un bucle while y el compilador podría suponer que nunca va a salir de ahi aunque nosotros sabes que saldría por una interrupción. Por lo cual con volatile se le dice eso al compilador.
+
 /* Puertos de los leds disponibles */
 GPIO_TypeDef* leds_port[] = { GPIOD, GPIOD, GPIOD, GPIOD };
 /* Leds disponibles */
 const uint16_t leds[] = { LED_V, LED_R, LED_N, LED_A };
 
-
 extern void APP_ISR_sw(void); //se declara como externa porque
 extern void APP_ISR_1ms(void); //aplicaciones que se va a ejecutar cada 1msegundo
 
+void bsp_delayMS(uint16_t x) { //chequeo valor de interrupción
+	bsp_contadorMS = x;
+	while (bsp_contadorMS) { //si no hay linea de código se podria poner directamente un ;. Aqui no sale del while hasta que no valga cero su argumento.
+
+	}
+}
 
 void led_on(uint8_t led) {
 	GPIO_SetBits(leds_port[led], leds[led]);
@@ -36,7 +44,6 @@ void led_off(uint8_t led) {
 void led_toggle(uint8_t led) {
 	GPIO_ToggleBits(leds_port[led], leds[led]);
 }
-
 
 uint8_t sw_getState(void) {
 	return GPIO_ReadInputDataBit(GPIOA, BOTON);
@@ -67,9 +74,12 @@ void TIM2_IRQHandler(void) {
 		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 		APP_ISR_1ms(); //la interrupción llama a la función
 
+		//forma eficiente de llevar el tiempo: decrementar y preguntar por cero. Es bueno esto ya que preguntar por cero es una flag d elos registros especiales.
+		if (bsp_contadorMS) { //si bsp_contadorMS vale distinto de cero se decrementa.
+			bsp_contadorMS--;
 		}
 	}
-
+}
 
 void bsp_led_init();
 void bsp_sw_init();
